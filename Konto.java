@@ -33,12 +33,14 @@ public class Konto
 
     private int pruefePin(int einePin)
     {
-        if (einePin == pin)
+        if (einePin == pin) 
         {
             return 1;
         }
         else
         {
+            falscheVersuche++;
+            if (falscheVersuche >= 3) gesperrt = true;
             return 0;
         }
     }
