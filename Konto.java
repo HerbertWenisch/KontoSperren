@@ -17,6 +17,8 @@ public class Konto
         kontostand = 0;
         kontonummer = eineNummer;
         pin = einePin;
+        gesperrt = false;
+        falscheVersuche = 0; 
     }
 
     int gibKontonummer()
