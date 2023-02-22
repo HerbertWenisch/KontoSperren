@@ -47,6 +47,11 @@ public class Konto
 
     void zeigeKontostand(int einePin)
     {
+        if(gesperrt){
+            System.out.println("Konto gesperrt!");
+            return;
+        }
+        
         if (pruefePin(einePin) == 1)
         {
             System.out.println(kontostand);
@@ -58,7 +63,12 @@ public class Konto
     }
 
     void verringereKontostand(double betrag, int einePin)
-    {
+    {   
+        if(gesperrt){
+            System.out.println("Konto gesperrt!");
+            return;
+        }
+        
         if (pruefePin(einePin) == 1)
         {
             kontostand = kontostand - betrag;
@@ -68,4 +78,6 @@ public class Konto
             System.out.println("falsche Pin-Eingabe");
         }
     }
+    
+    
 }
